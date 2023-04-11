@@ -1,0 +1,9 @@
+ext.configs = [
+        applicationName     : "Code Challenge 4",
+        applicationId       : "com.heroapps.codechallenge4",
+        versionCode         : 1,
+        versionName         : "0.0.1",
+        minSdk              : 24,
+        targetSdk           : 33,
+        compileSdk          : 33
+]

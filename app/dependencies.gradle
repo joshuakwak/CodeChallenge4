@@ -1,0 +1,136 @@
+ext {
+    // AndroidX
+    androidXVersion1_0_0 = "1.0.0"
+    androidXVersion1_3_1 = "1.3.1"
+    androidXVersion1_6_0 = "1.6.0"
+    androidXVersion2_0_1 = "2.0.1"
+    androidXVersion2_2_5 = "2.2.5"
+    androidXVersion2_3_1 = "2.3.1"
+    androidXVersion2_5_1 = "2.5.1"
+    androidXVersion3_1_1 = "3.1.1"
+    androidXVersion4_1_3 = "4.1.3"
+    androidXVersion7_3_1 = "7.3.1"
+    androidXVersion1_0_0_alpha07 = "1.0.0-alpha07"
+    androidXVersion2_4_0_alpha08 = "2.4.0-alpha08"
+
+    androidXDependencies = [
+            activityKTX               :"androidx.activity:activity-ktx:$androidXVersion1_3_1",
+            appCompat                 :"androidx.appcompat:appcompat:$androidXVersion1_6_0",
+            dataBindingRuntime        :"androidx.databinding:databinding-runtime:$androidXVersion7_3_1",
+            dataBindingCommon         :"androidx.databinding:databinding-common:$androidXVersion4_1_3",
+            coreKTX                   :"androidx.core:core-ktx:$androidXVersion1_6_0",
+            coreSplashscreen          :"androidx.core:core-splashscreen:$androidXVersion1_0_0",
+            lifecycleRuntimeKTX       :"androidx.lifecycle:lifecycle-runtime-ktx:$androidXVersion2_3_1",
+            lifecycleViewModelKTX     :"androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXVersion2_3_1",
+            pagingCommonKTX           :"androidx.paging:paging-common-ktx:$androidXVersion3_1_1",
+            roomKTX                   :"androidx.room:room-ktx:$androidXVersion2_2_5",
+            roomRuntime               :"androidx.room:room-runtime:$androidXVersion2_2_5",
+            sqllite                   :"androidx.sqlite:sqlite:$androidXVersion2_0_1",
+            roomCompiler              :"androidx.room:room-compiler:$androidXVersion2_2_5"
+    ]
+
+    // Navigation
+    navigationVersion = "2.5.3"
+    navigationDependencies = [
+            navigationUiKtx: "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    ]
+
+    // Constraint Layout
+    constraintLayoutVersion = "2.1.4"
+    constraintLayoutDependency = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    // Google
+    googleVersion1_3_0 = "1.3.0"
+    googleDependencies = [
+            material                : "com.google.android.material:material:$googleVersion1_3_0",
+    ]
+
+    // Kotlin Coroutines
+    coroutinesVersion1_6_3 = "1.6.3"
+    coroutinesDependencies = [
+            core            : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion1_6_3",
+            android         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion1_6_3"
+    ]
+
+    // Timber
+    timberVersion = "4.7.1"
+    timberDependency = "com.jakewharton.timber:timber:$timberVersion"
+
+    // Retrofit
+    retrofitVersion = "2.9.0"
+    retrofitDependencies = [
+            adapterRxJava2          : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            converterGson           : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            converterMoshi          : "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    ]
+
+    // OkHttp
+    okHttpVersion = "5.0.0-alpha.2"
+    okHttpDependencies = [
+            okHttp                  : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            loggingInterceptor      : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    ]
+
+    // Moshi
+    moshiVersion = "1.14.0"
+    moshiDependencies = [
+            moshi                       : "com.squareup.moshi:moshi:$moshiVersion",
+            moshiKotlin                 : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            moshiKotlinCodeGen          : "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+    ]
+
+    // Dagger - Hilt
+    daggerHiltVersion = "2.44"
+    daggerHiltKaptVersion = "2.44"
+    hiltLifecycleViewModelVersion = "1.0.0-alpha03"
+    hiltCompilerKaptVersion = "1.0.0"
+    hiltNavigationComposeVersion = "1.1.0-alpha01"
+    daggerHiltDependencies = [
+            hiltAndroid                 : "com.google.dagger:hilt-android:$daggerHiltVersion",
+            hiltAndroidCompiler         : "com.google.dagger:hilt-android-compiler:$daggerHiltKaptVersion",
+            hiltLifecycleViewModel      : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltLifecycleViewModelVersion",
+            hiltCompilerKapt            : "androidx.hilt:hilt-compiler:$hiltCompilerKaptVersion",
+    ]
+
+    // Firebase
+    firebaseVersion = "25.12.0"
+    firebaseDependencies = [
+            bom                      : "com.google.firebase:firebase-bom:$firebaseVersion",
+            analyticsKTX             : "com.google.firebase:firebase-analytics-ktx",
+            crashlyticsKTX           : "com.google.firebase:firebase-crashlytics-ktx",
+            config                   : "com.google.firebase:firebase-config",
+    ]
+
+    // Glide
+    glideVersion = "4.11.0"
+    glideDependencies = [
+            glide                    : "com.github.bumptech.glide:glide:$glideVersion",
+            glideCompiler            : "com.github.bumptech.glide:compiler:$glideVersion"
+    ]
+
+    // Coil
+    coilVersion = "1.1.1"
+    coilDependency = "io.coil-kt:coil:$coilVersion"
+
+    // OKHttp Profiler
+    okHttpProfilerVersion = "1.0.7"
+    okHttpProfilerDependency = "com.itkacher.okhttpprofiler:okhttpprofiler:$okHttpProfilerVersion"
+
+    // AndroidX Test
+    androidXTestVersion1_1_5 = "1.1.5"
+    androidXTestVersion1_3_0 = "1.3.0"
+    androidXTestVersion3_5_1 = "3.5.1"
+    androidXTestDependencies = [
+            espresso                 : "androidx.test.espresso:espresso-core:$androidXTestVersion3_5_1",
+            jUnitExt                 : "androidx.test.ext:junit:$androidXTestVersion1_1_5",
+            rules                    : "androidx.test:rules:$androidXTestVersion1_3_0",
+            runner                   : "androidx.test:runner:$androidXTestVersion1_3_0",
+    ]
+
+    // JUnit
+    jUnitVersion = "4.+"
+    jUnitDependency = "junit:junit:$jUnitVersion"
+
+}

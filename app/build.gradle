@@ -1,0 +1,132 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+}
+
+apply from  : "config.gradle"
+apply from: "dependencies.gradle"
+
+android {
+    namespace configs.applicationId
+    compileSdk configs.compileSdk
+
+    defaultConfig {
+        applicationId configs.applicationId
+        minSdk configs.minSdk
+        targetSdk configs.targetSdk
+        versionCode configs.versionCode
+        versionName configs.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "APP_SCRIPT_DEPLOYMENT_ID", APP_SCRIPT_DEPLOYMENT_ID
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            zipAlignEnabled false
+            manifestPlaceholders = [enableCrashReporting: "false"]
+            buildConfigField "String", "BASE_APP_URL", DEV_BASE_APP_URL
+        }
+        staging {
+            debuggable true
+            minifyEnabled false
+            zipAlignEnabled false
+            manifestPlaceholders = [enableCrashReporting: "true"]
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [enableCrashReporting: "true"]
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation androidXDependencies.activityKTX
+    implementation androidXDependencies.appCompat
+    implementation androidXDependencies.dataBindingCommon
+    implementation androidXDependencies.dataBindingRuntime
+    implementation androidXDependencies.coreKTX
+    implementation androidXDependencies.coreSplashscreen
+    implementation androidXDependencies.lifecycleRuntimeKTX
+    implementation androidXDependencies.lifecycleViewModelKTX
+    implementation androidXDependencies.pagingCommonKTX
+    implementation androidXDependencies.roomKTX
+    implementation androidXDependencies.roomRuntime
+    implementation androidXDependencies.sqllite
+    kapt androidXDependencies.roomCompiler
+
+    // Navigation
+    implementation navigationDependencies.navigationUiKtx
+    implementation navigationDependencies.navigationFragmentKtx
+
+    // Constraint Layout
+    implementation constraintLayoutDependency
+
+    // Google
+    implementation googleDependencies.material
+
+    // Kotlin Coroutines
+    implementation coroutinesDependencies.core
+    implementation coroutinesDependencies.android
+
+    // Dagger - Hilt
+    implementation daggerHiltDependencies.hiltAndroid
+    kapt daggerHiltDependencies.hiltAndroidCompiler
+    kapt daggerHiltDependencies.hiltCompilerKapt
+
+    // Retrofit
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.converterGson
+    implementation retrofitDependencies.converterMoshi
+    implementation retrofitDependencies.adapterRxJava2
+
+    // OkHttp
+    implementation okHttpDependencies.okHttp
+    implementation okHttpDependencies.loggingInterceptor
+
+    // Moshi
+    implementation moshiDependencies.moshi
+    implementation moshiDependencies.moshiKotlin
+    kapt moshiDependencies.moshiKotlinCodeGen
+
+
+    // Timber
+    implementation timberDependency
+
+    // Glide
+    implementation glideDependencies.glide
+    kapt glideDependencies.glideCompiler
+
+    // Coil
+    implementation coilDependency
+
+    // Tests
+    testImplementation jUnitDependency
+    androidTestImplementation androidXTestDependencies.jUnitExt
+    androidTestImplementation androidXTestDependencies.espresso
+}
